@@ -102,7 +102,7 @@ const Login = () => {
                     </div>
 
                     <a
-                        href="http://localhost:5000/api/auth/google"
+                        href="https://loaniq-api-rbqu.onrender.com/api/auth/google"
                         className="w-full btn-secondary !rounded-xl !py-3 flex items-center justify-center gap-3 bg-white/5 border-white/10 hover:bg-white/10"
                     >
                         <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
