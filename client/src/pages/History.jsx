@@ -17,7 +17,7 @@ const History = () => {
                         'Authorization': `Bearer ${user.token}`,
                     },
                 };
-                const { data } = await axios.get('http://localhost:5000/api/predict/history', config);
+                const { data } = await axios.get('https://loaniq-api-rbqu.onrender.com/api/predict/history', config);
                 setLogs(data);
             } catch (error) {
                 console.error('Error fetching history:', error);

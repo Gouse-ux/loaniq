@@ -21,10 +21,10 @@ const AdminDashboard = () => {
                     },
                 };
                 if (activeTab === 'users') {
-                    const { data } = await axios.get('http://localhost:5000/api/admin/users', config);
+                    const { data } = await axios.get('https://loaniq-api-rbqu.onrender.com/api/admin/users', config);
                     setUsers(data);
                 } else {
-                    const { data } = await axios.get('http://localhost:5000/api/admin/logs', config);
+                    const { data } = await axios.get('https://loaniq-api-rbqu.onrender.com/api/admin/logs', config);
                     setLogs(data);
                 }
             } catch (error) {
