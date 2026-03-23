@@ -71,7 +71,7 @@ const PredictionForm = () => {
                 },
             };
 
-            const { data } = await axios.post('https://loaniq-api-rbqu.onrender.com/api/predict', structuredData, config);
+            const { data } = await axios.post('https://loaniq-ml.onrender.com/predict', structuredData, config);
             setPrediction(data.prediction);
         } catch (err) {
             setError(err.response?.data?.message || 'Prediction failed. Please try again.');
