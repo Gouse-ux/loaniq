@@ -49,7 +49,11 @@ const makePrediction = async (req, res) => {
 
     try {
         // Call ML API with structured JSON
-        const response = await fetch(process.env.ML_API_URL, {
+        const mlApiEndpoint = process.env.ML_API_URL.endsWith('/predict') 
+            ? process.env.ML_API_URL 
+            : `${process.env.ML_API_URL}/predict`;
+
+        const response = await fetch(mlApiEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
