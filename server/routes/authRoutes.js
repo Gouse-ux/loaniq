@@ -19,10 +19,10 @@ router.get(
 
 router.get(
     '/google/callback',
-    passport.authenticate('google', { session: false, failureRedirect: 'http://localhost:5173/login' }),
+    passport.authenticate('google', { session: false, failureRedirect: `${process.env.CLIENT_URL || 'https://loaniq-app.netlify.app'}/login` }),
     (req, res) => {
         const token = generateToken(req.user._id);
-        res.redirect(`http://localhost:5173/?token=${token}`);
+        res.redirect(`${process.env.CLIENT_URL || 'https://loaniq-app.netlify.app'}/?token=${token}`);
     }
 );
 
