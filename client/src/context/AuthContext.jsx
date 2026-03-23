@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
                     window.history.replaceState({}, document.title, window.location.pathname);
 
                     // Fetch user profile using the token
-                    const { data } = await axios.get('http://localhost:5000/api/auth/profile', {
+                    const { data } = await axios.get('https://loaniq-api-rbqu.onrender.com/api/auth/profile', {
                         headers: { Authorization: `Bearer ${urlToken}` }
                     });
 
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+            const { data } = await axios.post('https://loaniq-api-rbqu.onrender.com/api/auth/login', {
                 email,
                 password,
             });
@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password, role) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/auth/register', {
+            const { data } = await axios.post('https://loaniq-api-rbqu.onrender.com/api/auth/register', {
                 name,
                 email,
                 password,
